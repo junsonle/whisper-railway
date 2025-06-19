@@ -15,7 +15,7 @@ async def transcribe(audio: UploadFile = File(...)):
 
     subprocess.run([
         "./whisper.cpp/main",
-        "-m", "models/ggml-small.bin",
+        "-m", "models/ggml-tiny.bin",
         "-f", input_path,
         "-l", "vi",
         "-otxt"
