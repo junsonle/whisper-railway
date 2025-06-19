@@ -6,7 +6,7 @@ RUN apt update && apt install -y \
 
 WORKDIR /app
 
-COPY whisper.cpp /app/whisper.cpp
+RUN git clone https://github.com/ggerganov/whisper.cpp
 RUN mkdir -p /app/models && \
     curl -L -o /app/models/ggml-small.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin
 COPY app.py requirements.txt /app/
