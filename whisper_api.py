@@ -7,7 +7,7 @@ import sys
 app = Flask(__name__)
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-model = WhisperModel("small", compute_type="int8", device="cpu")
+model = WhisperModel("base", compute_type="int8", device="cpu")
 
 @app.route("/transcribe", methods=["POST"])
 def transcribe():
